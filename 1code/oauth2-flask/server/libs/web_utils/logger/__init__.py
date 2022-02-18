@@ -1,0 +1,1 @@
+from .logstash.get_logger import get_logstash_logger

@@ -1,0 +1,109 @@
+{% extends 'admin/master.html' %}
+
+{% block body %}
+
+<form action='.' method='post'>
+	<div clas='container'>
+
+		<!-- 第一行 -->
+		<div class="row">
+			<!-- 第一列 -->
+			<div class="col-md-6">
+				<div class="panel panel-default">
+					<div class="panel-heading">redis设置</div>
+					<div class="panel-body">
+
+						<div class="col-md-5">
+							redis_db
+						</div>
+						<div class="col-md-7">
+							<input type="text" name="redis_db" value="{{data.redis_db}}">
+						</div>
+
+						<div class="col-md-5">
+							redis_host
+						</div>
+						<div class="col-md-7">
+							<input type="text" name="redis_host" value="{{data.redis_host}}">
+						</div>
+
+						<div class="col-md-5">
+							redis_port
+						</div>
+						<div class="col-md-7">
+							<input type="text" name="redis_port" value="{{data.redis_port}}">
+						</div>
+
+						<div class="col-md-5">
+							redis_password
+						</div>
+						<div class="col-md-7">
+							<input type="text" name="redis_password" value="{{data.redis_password or ''}}">
+						</div>
+
+<!-- 						<div class="col-md-5">
+							access_token_expiration
+						</div>
+						<div class="col-md-7">
+							<input type="text" name="access_token_expiration" value="{{data.access_token_expiration}}">
+						</div> -->
+						
+
+					</div>
+				</div>
+			</div><!-- 第一列结束 -->
+		</div><!-- 第一行结束 -->
+		
+		<!-- 第二行 -->
+		<div class="row">
+
+			<!-- 第一列 -->
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">第三方登录设置</div>
+					<div class="panel-body">
+
+						<!-- 字段 -->
+						<div class="col-md-5">client_id</div>
+						<div class="col-md-7">
+							<input type="text" name="client_id" value="{{ data.client_id }}">
+						</div>
+
+						<div class="col-md-5">client_secret</div>
+						<div class="col-md-7">
+							<input type="text" name="client_secret" value="{{ data.client_secret }}">
+						</div>
+
+
+						<div class="col-md-5">client_default_uri</div>
+						<div class="col-md-7">
+							<input type="text" name="client_default_uri" value="{{ data.client_default_uri }}" style="width: 100%;">
+						</div>
+						<div class="col-md-5">client_code2token_api</div>
+						<div class="col-md-7">
+							<input type="text" name="client_code2token_api" value="{{ data.client_code2token_api }}" style="width: 100%;">
+						</div>
+						<div class="col-md-5">authorization_code_api</div>
+						<div class="col-md-7">
+							<input type="text" name="authorization_code_api" value="{{ data.authorization_code_api }}" style="width: 100%;">
+						</div>
+						<div class="col-md-5">code2token_api</div>
+						<div class="col-md-7">
+							<input type="text" name="code2token_api" value="{{ data.code2token_api }}" style="width: 100%;">
+						</div>
+						<div class="col-md-5">token2userinfo_api</div>
+						<div class="col-md-7">
+							<input type="text" name="token2userinfo_api" value="{{ data.token2userinfo_api }}" style="width: 100%;">
+						</div>
+					</div>
+				</div>
+			</div><!-- 第一列结束 -->
+		</div><!-- 第二行结束 -->
+
+
+	</div>
+
+	<input type="submit" value="修改">
+</form>
+
+{% endblock %}

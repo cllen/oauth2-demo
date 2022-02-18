@@ -1,0 +1,24 @@
+{% extends "home/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block title %}课程管理系统{% endblock %}
+
+{% block page_content %}
+
+
+欢迎访问课程管理系统！
+{% if data.get('username') %}
+	您好，{{ data.username }} ! 请<a href="/client/logout">注销</a>。
+{% else %}
+	您未登录，请<a href="/client/login">使用第三方登录</a>
+{% endif %}
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{{ pagedown.include_pagedown() }}
+{% endblock %}
+
+
